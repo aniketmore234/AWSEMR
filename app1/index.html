@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="Registrations">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Portal</title>
+  <link rel="stylesheet" type="text/css" href="./styles/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  <script type="text/javascript" src="./scripts/angular.min.js"></script>
+  <script type="text/javascript" src="./scripts/app.js"></script>
+  <h1 id="h1">Registration form</h1>
+</head>
+
+<body>
+<form class="form" ng-controller="HostelListController as hostelctrl" validate>
+  First name:
+  <input type="text" required><br><br>
+
+  Last name:
+  <input type="text" required><br><br>
+  
+  Gender:
+  <div class="radio">
+    <label><input type="radio" name="optradio" ng-model="Value" value="Male" ng-change='newGender(Value)'> Male</label><br>
+    <label><input type="radio" name="optradio" ng-model="Value" value="Female" ng-change='newGender(Value)'> Female</label>
+  </div>
+  <br>
+  
+  Hostel:
+  <select class="hostelsList">  
+    <option value="0"></option>
+    <option ng-repeat="hostel in hostelctrl.hostels" ng-show="Value==='Male' && hostel.type==='Male'" value="{{hostel.num}}">{{hostel.name}}</option>
+    <option ng-repeat="hostel in hostelctrl.hostels" ng-show="Value==='Female' && hostel.type==='Female'" value="{{hostel.num}}">{{hostel.name}}</option>
+  </select>
+  <br><br>
+  
+  <input type="Submit">
+  <input type="reset">
+  
+</form>
+
+</body>
+
+</html>
