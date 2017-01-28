@@ -21,14 +21,14 @@
   
   Gender:
   <div class="radio">
-    <label><input type="radio" name="optradio" ng-model="Value" value="Male" ng-change='newGender(Value)'> Male</label><br>
+    <label><input type="radio" name="optradio" ng-model="Value" value="Male" ng-change='newGender(Value)' required> Male</label><br>
     <label><input type="radio" name="optradio" ng-model="Value" value="Female" ng-change='newGender(Value)'> Female</label>
   </div>
   <br>
   
   Hostel:
-  <select class="hostelsList">  
-    <option value="0"></option>
+  <select required class="hostelsList">  
+    <option value=""></option>
     <option ng-repeat="hostel in hostelctrl.hostels" ng-show="Value==='Male' && hostel.type==='Male'" value="{{hostel.num}}">{{hostel.name}}</option>
     <option ng-repeat="hostel in hostelctrl.hostels" ng-show="Value==='Female' && hostel.type==='Female'" value="{{hostel.num}}">{{hostel.name}}</option>
   </select>
