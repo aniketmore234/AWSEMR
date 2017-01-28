@@ -27,7 +27,7 @@
   <br>
   
   Hostel:
-  <select required class="hostelsList">  
+  <select required class="hostelsList" ng-init="clearList=''" ng-model="clearList">  
     <option value=""></option>
     <option ng-repeat="hostel in hostelctrl.hostels" ng-show="Value==='Male' && hostel.type==='Male'" value="{{hostel.num}}">{{hostel.name}}</option>
     <option ng-repeat="hostel in hostelctrl.hostels" ng-show="Value==='Female' && hostel.type==='Female'" value="{{hostel.num}}">{{hostel.name}}</option>
