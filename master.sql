@@ -1,4 +1,4 @@
-USE sms;
+CREATE DATABASE sms;
 GO
 DROP TABLE IF EXISTS sms.master;
 GO
