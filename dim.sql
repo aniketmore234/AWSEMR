@@ -1,7 +1,7 @@
 use sms;
 GO
 
-DROP TABLE nameDim;
+DROP TABLE IF EXISTS nameDim;
 GO
 
 CREATE TABLE nameDim(
@@ -18,7 +18,7 @@ INSERT INTO sms.nameDim (Company_ID, Symbol)
 GO
 
 
-DROP TABLE dateDim;
+DROP TABLE IF EXISTS dateDim;
 GO
 
 CREATE TABLE dateDim(
@@ -33,7 +33,7 @@ INSERT INTO sms.dateDim (Date_of_record)
 	ORDER BY Date_of_record;
 GO
 
-DROP TABLE equityDim;
+DROP TABLE IF EXISTS equityDim;
 GO
 
 CREATE TABLE equityDim(

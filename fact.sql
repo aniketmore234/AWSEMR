@@ -1,7 +1,7 @@
 USE sms;
 GO
 
-DROP TABLE sms.fact;
+DROP TABLE IF EXISTS sms.fact;
 GO
 
 CREATE TABLE sms.fact(

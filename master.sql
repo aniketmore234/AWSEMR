@@ -1,6 +1,6 @@
 USE sms;
 GO
-DROP TABLE sms.master;
+DROP TABLE IF EXISTS sms.master;
 GO
 
 CREATE TABLE sms.master(
