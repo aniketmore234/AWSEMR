@@ -1,50 +1,28 @@
-use sms;
-GO
+CREATE TABLE IF NOT EXISTS sms.dimName AS SELECT
+ROW_NUMBER() OVER(ORDER BY Company_ID) as name_id,
+Company_ID,
+Symbol
+FROM sms.master GROUP BY Company_ID, Symbol;
 
-DROP TABLE IF EXISTS nameDim;
-GO
+describe sms.dimName;
 
-CREATE TABLE nameDim(
-name_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-Company_ID int,
-Symbol varchar(15));
-GO
+select * from sms.dimName;
 
-INSERT INTO sms.nameDim (Company_ID, Symbol)
-	SELECT Company_ID, Symbol
-	FROM sms.master
-	GROUP BY Company_ID
-        ORDER BY Company_ID;
-GO
+CREATE TABLE IF NOT EXISTS sms.dimDate AS SELECT
+ROW_NUMBER() OVER() as date_id,
+Date_of_record
+FROM sms.master GROUP BY Date_of_record;
 
+describe sms.dimDate;
 
-DROP TABLE IF EXISTS dateDim;
-GO
+select * from sms.dimDate;
 
-CREATE TABLE dateDim(
-date_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-Date_of_record date);
-GO
+CREATE TABLE IF NOT EXISTS sms.dimEquity AS SELECT
+ROW_NUMBER() OVER() as eqt_ID,
+Equity_Series
+FROM sms.master GROUP BY Equity_Series;
 
-INSERT INTO sms.dateDim (Date_of_record)
-        SELECT Date_of_record
-        FROM sms.master
-	GROUP BY Date_of_record
-	ORDER BY Date_of_record;
-GO
+describe sms.dimEquity;
 
-DROP TABLE IF EXISTS equityDim;
-GO
+select * from sms.dimEquity;
 
-CREATE TABLE equityDim(
-equity_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-equity_series varchar(15),
-equity_flag BOOLEAN DEFAULT TRUE);
-GO
-
-INSERT INTO sms.equityDim (equity_series)
-        SELECT Equity_Series
-	FROM sms.master
-	GROUP BY equity_series
-	ORDER BY equity_series;
-GO
