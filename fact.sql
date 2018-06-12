@@ -20,5 +20,5 @@ LEFT JOIN sms.dimDate d ON s.Date_of_record = d.Date_of_record
 LEFT JOIN sms.dimName n ON s.Company_ID = n.Company_ID
 WHERE  s.Company_ID>0;
 
-SELECT * FROM sms.fSource;
+SELECT * FROM sms.fact;
 
