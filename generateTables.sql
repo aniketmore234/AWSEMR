@@ -1,4 +1,4 @@
-pig -x local data-flow.pig
+pig -x local dataflow.pig
 
 hive -f master.sql
 

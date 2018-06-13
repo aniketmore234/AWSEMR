@@ -1,4 +1,5 @@
 CREATE TABLE IF NOT EXISTS sms.fact as SELECT
+ROW_NUMBER() OVER() as fact_id,
 n.name_id as name_id,
 d.date_id as date_id,
 e.eqt_ID as eqt_id,
