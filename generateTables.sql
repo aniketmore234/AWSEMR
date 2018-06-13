@@ -1,4 +1,4 @@
-hive -f source.sql
+pig -x local data-flow.pig
 
 hive -f master.sql
 
