@@ -1,6 +1,5 @@
 CREATE DATABASE sms;
 CREATE EXTERNAL TABLE sms.master(
-data_id int,
 Company_ID int,
 Symbol string,
 Equity_Series string,
@@ -26,7 +25,7 @@ WITH SERDEPROPERTIES (
 
 describe sms.master;
 
-load data local inpath './clean-data/part-m-00000' into table sms.master;
+load data local inpath './raw-data' into table sms.master;
 
 select * from sms.master;
 

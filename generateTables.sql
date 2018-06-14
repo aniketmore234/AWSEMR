@@ -7,3 +7,5 @@ hive -f dim.sql
 hive -f fact.sql
 
 hive -f quarter_aggr.sql
+
+hive --service hiveserver2

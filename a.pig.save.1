@@ -1,6 +1,0 @@
-records = LOAD '/home/hadoop/AWSEMR/alphanumeric.txt' USING PigStorage(',');
-
-records_each = FILTER records by ($0 matches '^[0-9]+$';
-
-Dump records_each;
-
