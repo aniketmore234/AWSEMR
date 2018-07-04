@@ -1,0 +1,4 @@
+Scrapy==0.24.4
+service_identity
+pyasn1
+pyasn1-modules

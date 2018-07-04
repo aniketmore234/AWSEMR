@@ -32,13 +32,13 @@ class StockSpider(BaseSpider):
 			item['DayRange'] = hxs.xpath('//*[@id="quote-summary"]/div[1]/table/tbody/tr[5]/td[2]/text()').extract()
 			item['YearRange'] = hxs.xpath('//*[@id="quote-summary"]/div[1]/table/tbody/tr[6]/td[2]/text()').extract()
 			item['Volume'] = hxs.xpath('//*[@id="quote-summary"]/div[1]/table/tbody/tr[7]/td[2]/span/text()').extract()
-			item['MarketCap'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[1]/td[2]/text()').extract()
+			item['MarketCap'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[1]/td[2]/span/text()').extract()
 			item['Beta'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[2]/td[2]/span/text()').extract()
 			item['PERatioTTM'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[3]/td[2]/span/text()').extract()
 			item['EPSTTM'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[4]/td[2]/span/text()').extract()
 			item['ForwardDivYield'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[6]/td[2]/text()').extract()
 			item['OneYearTragetEstimate'] = hxs.xpath('//*[@id="quote-summary"]/div[2]/table/tbody/tr[8]/td[2]/span/text()').extract()
-			item['PercentGain'] = hxs.xpath('//*[@id="quote-header-info"]/div[3]/div/div/span[2]/text()').extract()
+			item['PercentGain'] = hxs.xpath('//*[@id="quote-header-info"]/div[3]/div/div[1]/span[2]/text()').extract()
 			#item['Error']= "False"
 			#with open("filter-urls.txt", 'a') as outfile:
 			#	outfile.write(ticker+"\n")
